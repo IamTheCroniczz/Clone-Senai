@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: "PT Sans", sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ff0000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column; /* Modificado para vertical */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 5px 0; /* Ajuste o espaçamento entre os itens */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #bfbcc2; /* Ajustado para o efeito hover */
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.title {
+    color: #333;
+    text-align: left;
+    font-family: verdana, sans-serif;
+    font-weight: 700;
+    margin-left: 9px;
+}
+
+.div-master {
+    margin: 50px auto;
+    text-align: center;
+    padding: 40px 10px;
+    width: 90%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.carrossel {
+    display: flex;
+    align-items: center;
+    height: 270px;
+    width: max-content;
+    transition: transform 0.3s ease;
+}
+
+.item-c {
+    display: inline-block;
+    width: 152px;
+    height: 270px;
+    margin: 0 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.item-c img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.item-c:hover img, .item-c:focus img {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.caption {
+    display: none;
+    background: #0085FF;
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-family: verdana, sans-serif;
+}
+
+.item-c:hover .caption, .item-c:focus .caption {
+    display: block;
+}
+
+.before, .after {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.before {
+    left: 10px;
+}
+
+.after {
+    right: 10px;
+}
+
+.scroll-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #191919;
+    border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.navbar .logo a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #f00000;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.mobile-nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.mobile-nav-links li a:hover {
+    color: #f0a500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.img {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    padding: 2.9%;
+}
+
+.img img {
+    width: 5%;
+    margin-left: 25%;
+}
+
+.sidebar {
+    width: 300px; /* Largura do menu lateral */
+    background-color: #fff; /* Roxo escuro */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Menu deve estar acima do conteúdo principal */
+    overflow-y: auto; /* Permitir rolagem se necessário */
+    transform: translateX(-100%); /* Inicialmente oculto */
+    transition: transform 0.3s ease; /* Transição para a animação de abrir/fechar */
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Mostra a sidebar quando aberta */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff; /* Linha para separar o cabeçalho do restante do menu */
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.close-sidebar-button {
+    background-color: transparent; /* Roxo escuro */
+    color: #ff0000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-sidebar-button:hover {
+    color: #ff0000;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #b90404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.user-details {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details span {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.user-details a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.user-details a:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: red; 
+    color:white;
+}
+
+/* Submenu Styles */
+.submenu-container {
+    position: relative;
+}
+
+.submenu-toggle {
+    display: block;
+    color: red;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: transparent; /* Cor de fundo do item de submenu */
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.submenu-toggle:hover {
+    background-color: rgb(0, 0, 0); /* Cor de fundo ao passar o mouse */
+    color: white;
+    transition: s;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.submenu a {
+    padding: 10px 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #333; /* Cor de fundo do submenu */
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.submenu a:hover {
+    background-color: #333; /* Cor de fundo ao passar o mouse */
+    color:white;
+}
+
+.submenu.open {
+    display: flex;
+}
+
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+    flex: 1;
+    background-color: #ffffff;
+    overflow-y: auto; /* Permitir rolagem se necessário */
+    transition: margin-left 0.3s ease;
+}
+
+.menu-toggle-button {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    background-color: transparent; /* Roxo escuro */
+    color: #ff0000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: backgroundbar; 
+    /* Tamanho do ícone */
+    font-size: 20px; 
+    text-align: center;
+
+}
+.menu-toggle-button:hover {
+    background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+}
+
+.menu-toggle-button::before {
+    content: "\2630"; /* Código Unicode para o ícone de três barras (hambúrguer) */
+}
+
+span {
+    display: block;
+    font-size: 2vh;
+}
+
+a {
+    display: block;
+}
+.submenu-ta {
+    color:black;
+}
